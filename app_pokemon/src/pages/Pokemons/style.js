@@ -4,17 +4,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 64px;
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: 3px;
-`;
-
-export const PokemonsGrid = styled.div`
-  font-size: 32px;
-  color: pink;
 `;
