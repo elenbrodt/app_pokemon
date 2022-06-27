@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0 auto;
         outline: none;
-        box-sizing: border-box;
+        box-sizing: border-box;  
     }
     body {
         -webkit-font-smoothing: antialiased;

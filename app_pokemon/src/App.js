@@ -1,16 +1,18 @@
-//import api from "./service/api";
 import React from "react";
-//import Img1 from "./images/img1";
 import { Head } from "./components/Head/Head";
+//import { Home } from "./pages/Home/Home";
 import { Pokemons } from "./pages/Pokemons/Pokemons";
 import { GlobalStyle } from "./styles/global";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Head />
-      <Pokemons />
+      <BrowserRouter>
+        <Head />
+        <Pokemons />
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Logo from "../../images/Logo";
 import * as S from "./style";
+import { Link } from "react-router-dom";
 
 export function Head() {
   return (
@@ -11,13 +12,13 @@ export function Head() {
         <S.Nav>
           <S.Pages>
             <li>
-              <a href="#">Home</a>
+              <a>Home</a>
             </li>
             <li>
-              <a href="#">Pokemón</a>
+              <a>Pokemon</a>
             </li>
             <li>
-              <a href="#">Contato</a>
+              <a>Contato</a>
             </li>
           </S.Pages>
         </S.Nav>
