@@ -1,5 +1,6 @@
 import * as S from "./style";
 import banner from "../../images/banner.png";
+import { Button } from "../../components/Commons";
 
 export function Home() {
   return (
@@ -13,9 +14,7 @@ export function Home() {
           Você pode saber o tipo de Pokemón, seus pontos fortes, fracos e
           habilidades{" "}
         </p>
-        <a href="#" className="HomeButton">
-          Veja os pokemóns
-        </a>
+        <Button variant="contained">Veja os pokemóns</Button>
       </S.HomeInfo>
       <S.HomeImg src={banner} alt="banner-pikachu" />
     </S.Wrapper>

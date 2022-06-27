@@ -1,11 +1,24 @@
 import { Card } from "../Commons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CardContentStyled, ValueStyled, ImgStyled, CardInfo } from "./style";
+import api from "../../service/api";
 
-export function PokemonCard({ name, type, img, hp }) {
+export function PokemonCard({ name }) {
+  const [pokemon, setPokemon] = useState({});
   var color = "";
-
-  switch (type) {
+  useEffect(() => {
+    api.get(`/pokemon/${name}`).then((response) => {
+      const { id, types, sprites, stats } = response.data;
+      console.log(types[0].type.name);
+      setPokemon({
+        id,
+        hp: stats[0].base_stat,
+        image: sprites.other.dream_world.front_default,
+        type: types[0].type.name,
+      });
+    });
+  }, [name]);
+  switch (pokemon.type) {
     case "grass":
       color = "#46D0A7";
       break;
@@ -28,18 +41,17 @@ export function PokemonCard({ name, type, img, hp }) {
       color = "#888888";
       break;
   }
-
   return (
     <Card>
       <CardContentStyled color={color}>
         <div>
-          <img src={img} alt={`Imagem do pokémon ${name}`}></img>
+          <img src={pokemon.image} alt={`Imagem do pokémon ${name}`}></img>
         </div>
         <CardInfo>
           <div>
+            <ValueStyled>#{pokemon.id}</ValueStyled>
             <ValueStyled>{name}</ValueStyled>
-            <ValueStyled> {type}</ValueStyled>
-            <ValueStyled>hp: {hp}</ValueStyled>
+            <ValueStyled>hp: {pokemon.hp}</ValueStyled>
           </div>
         </CardInfo>
       </CardContentStyled>

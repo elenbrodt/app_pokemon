@@ -33,7 +33,6 @@ const PokemonsAll = () => {
   }, []);
   useEffect(() => {
     const isSearch = pokemonSearch.length >= 2;
-
     if (isSearch) handleSearchPokemons();
     else handlePokemonsListDefault();
   }, [pokemonSearch, handlePokemonsListDefault, handleSearchPokemons]);
