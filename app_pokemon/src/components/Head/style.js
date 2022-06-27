@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 14px;
+  box-shadow: 2px 2px 5px gray;
 `;
 export const Header = styled.header`
   display: flex;

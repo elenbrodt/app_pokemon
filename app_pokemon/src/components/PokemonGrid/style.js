@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CardContent, Typography } from "../Commons";
+import { CardContent } from "../Commons";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,20 +12,20 @@ export const Wrapper = styled.div`
 export const CardContentStyled = styled(CardContent)`
   display: flex;
   flex-direction: row;
-  border: none;
-  border-radius: 8px;
   align-items: center;
-  justify-content: space-between;
   background-color: ${({ color }) => color || "#5d78ff"};
+  img {
+    height: 80px;
+    width: 80px;
+  }
 `;
-export const ValueStyled = styled(Typography)`
-  font-size: 1.5rem;
-  text-align: left;
-  color: white;
-`;
-export const ImgStyled = styled.div`
+export const ValueStyled = styled.div`
   text-align: center;
+  color: white;
+  font-weight: 700;
+  text-transform: capitalize;
 `;
+
 export const Search = styled.div`
   display: flex;
   align-items: center;
@@ -34,12 +34,13 @@ export const Search = styled.div`
 `;
 export const GridCardContentStyled = styled(CardContent)`
   display: flex;
-  width: 100%;
+  width: 1440px;
+  margin-top: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export const CardInfo = styled.div`
-  display: flex;
-  flex-direction: column;
+  border: none;
+  border-radius: 8px;
 `;

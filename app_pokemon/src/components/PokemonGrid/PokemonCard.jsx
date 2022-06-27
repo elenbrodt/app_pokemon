@@ -2,7 +2,7 @@ import { Card } from "../Commons";
 import React from "react";
 import { CardContentStyled, ValueStyled, ImgStyled, CardInfo } from "./style";
 
-export function PokemonCard({ name, type, img, hp, typetwo }) {
+export function PokemonCard({ name, type, img, hp }) {
   var color = "";
 
   switch (type) {
@@ -28,20 +28,20 @@ export function PokemonCard({ name, type, img, hp, typetwo }) {
       color = "#888888";
       break;
   }
+
   return (
     <Card>
       <CardContentStyled color={color}>
+        <div>
+          <img src={img} alt={`Imagem do pokémon ${name}`}></img>
+        </div>
         <CardInfo>
-          <ValueStyled>{name}</ValueStyled>
-          <ValueStyled>Tipo: {type}</ValueStyled>
-          <ValueStyled>
-            HP: {hp} {typetwo}
-          </ValueStyled>
+          <div>
+            <ValueStyled>{name}</ValueStyled>
+            <ValueStyled> {type}</ValueStyled>
+            <ValueStyled>hp: {hp}</ValueStyled>
+          </div>
         </CardInfo>
-
-        <ImgStyled>
-          <img src={img}></img>
-        </ImgStyled>
       </CardContentStyled>
     </Card>
   );
